@@ -51,3 +51,8 @@ def search():
 @app.route("/", methods=["GET"])
 def index():
     return "✅ Vector server is running."
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 5000))  # 👈 Render fournit PORT automatiquement
+    app.run(host="0.0.0.0", port=port)
+
